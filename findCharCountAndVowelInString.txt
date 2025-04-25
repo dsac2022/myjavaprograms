@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+class Demo
+{
+    Scanner s=new Scanner(System.in);
+    {
+        System.out.print("enter string: ");
+    }
+
+    String str=s.nextLine();
+    int count=0;
+    int v=0;
+
+    void findChar()
+    {
+        System.out.println();
+        char[] ch= str.toCharArray();   //string to char
+        System.out.print("enter character: ");
+        char c=s.next().charAt(0);  //take char
+        System.out.println();
+        for(int i=0;i<ch.length;i++)
+        {
+            if(ch[i]==c)
+            {
+                count++;
+            }
+        }
+        if(count>=1)
+        System.out.println("char " +c+ " is present, count is: " +count);
+        else
+        System.out.println("char " +c+ " not present, count is: " +count);
+    }
+    
+    void vowel()
+    {
+        System.out.println();
+        char[] c=str.toCharArray();
+        for(int i=0;i<c.length;i++)
+        {
+            char[] vow={'a','i','o','e','u'};
+            for(int j=0;j<vow.length;j++)
+            {
+                if(c[i]==vow[j])
+                {
+                    v++;
+                }
+            }
+        }
+        System.out.println("vowels in the "+str+" are: " +v);
+    }
+}
+
+public class MyClass 
+{
+    
+    public static void main(String args[]) 
+    {
+           Demo d=new Demo();
+           d.findChar();
+           d.vowel();
+    } 
+}
+_______________________________________________________________________________________
+enter string: om shanti om
+
+enter character: z
+
+char z is not present, count is: 0
+
+vowels in the om shanti om are: 4

@@ -1,0 +1,50 @@
+import java.util.*;
+
+class Demo
+{
+    Scanner sc = new Scanner(System.in);
+    char v[] = {'a','e','i','o','u'};
+    int vow_count=0;
+    
+    String input()  //take string
+    {
+        System.out.println("enter string: ");
+        String s1 = sc.nextLine();
+        return s1;
+    }
+    
+    String show() //print and pass string
+    {
+        String n = input();
+        System.out.println("string from method is : " +n);
+        return n;
+    }
+    
+    void vowel() //count string
+    {
+        String s = show();
+        
+        char ch[] = s.toCharArray();
+        for(int i=0;i<s.length();i++)
+        {
+            for(int j=0;j<v.length;j++)
+            {
+                if(ch[i]== v[j] )
+                {
+                    vow_count++;
+                }
+            }
+        }
+        System.out.println("\ncount of vowels are: "  +vow_count);
+    }
+    
+}
+
+public class MyClass
+{
+    public static void main(String args[]) 
+    {
+        Demo d = new Demo();
+        d.vowel();
+    }
+}

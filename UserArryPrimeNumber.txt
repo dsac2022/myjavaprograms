@@ -1,0 +1,59 @@
+import java.util.Scanner;
+class Demo
+{
+    int size=0;
+    int[] a=new int[size];
+    
+    int fact=0;
+    Scanner s = new Scanner(System.in);
+    {
+        System.out.println("enter size of array:");
+        size= s.nextInt();
+        a=new int[size];
+        System.out.println("__________________________________");
+    }
+    void input()
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=s.nextInt();
+        }
+        System.out.println("_____________________________");
+        for(int b:a)
+        System.out.println(b+" ");
+    }
+    
+    void prime()
+    {
+        System.out.println("_______________________________");
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=1;j<=a[i];j++)
+            {
+                if(a[i]%j==0)
+                {
+                    fact++;
+                }
+            }
+            if(fact==2)
+            {
+                System.out.println("prime number:" +a[i]);
+            }
+            else
+            {
+                System.out.println("not a prime number:" +a[i]);
+            }
+            fact=0;
+        }
+    }
+}
+public class MyClass
+
+{
+    public static void main(String args[]) 
+    {
+       Demo d = new Demo();
+       d.input();
+       d.prime();
+    }
+}

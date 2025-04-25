@@ -1,0 +1,30 @@
+public class MyClass
+{
+    public static void main(String args[]) 
+    {
+       int[] a={15,241,16,17,18,19,109,233,20,103,337};
+       int fact=0;
+       
+       for(int i=1;i<a.length;i++)
+       {
+           for(int j=1;j<=a[i];j++)
+           {
+               if(a[i]%j==0)
+               {
+                   fact++;
+               }
+           }
+            System.out.println();
+           if(fact==2)
+                   {
+                       System.out.println("Prime : " +a[i]);
+                   }
+                  
+                   else
+                   {
+                       System.out.println("not a prime" +a[i]);
+                   }
+           fact=0;
+       }
+    }
+}

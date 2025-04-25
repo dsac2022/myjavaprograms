@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Demo
+{
+    Scanner s=new Scanner(System.in);
+    int count=0;
+    void inputString()
+    {
+        System.out.println("enter string: ");
+        String str=s.nextLine();
+        char[] ch= str.toCharArray();   //string to char
+        System.out.println("enter character : ");
+        char c=s.next().charAt(0);  //take char
+        for(int i=0;i<ch.length;i++)
+        {
+            if(ch[i]==c)
+            {
+                count++;
+            }
+        }
+        if(count>=1)
+        System.out.println("char is present: " +count);
+        else
+        System.out.println("char not present: " +count);
+    }
+}
+public class MyClass 
+{
+    
+    public static void main(String args[]) 
+    {
+           Demo d=new Demo();
+           d.inputString();
+    }
+}
+_______________________________________________________________________________________
+enter string: 
+sachin kaduba dandge
+enter character : 
+d
+char is present: 3

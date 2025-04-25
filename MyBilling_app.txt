@@ -1,0 +1,134 @@
+import java.util.*;
+class Demo
+{
+    Scanner s=new Scanner(System.in);
+    int ch=0;
+    int O=0;
+    int Su=0;
+    int S=0;
+    int M=0;
+    int final_amt= O + Su + S + M;
+    
+    void ui()
+    {
+        System.out.println("S Mart");
+        System.out.println("------------------------------------------------------");
+    }
+    
+    void itemList()
+    {
+        System.out.println("Item\t Price");
+        System.out.println("---------------------------");
+        System.out.println("1.Oil\t 200 ltr\n2.Sugar  40 kg\n3.Soap   100 4n\n4.Maggie  50 pck");
+        System.out.println("---------------------------");
+    }
+    
+    void userBasket()
+    {
+        System.out.print("Enter Item number: ");
+        int choice=s.nextInt();
+        switch(choice)
+        {
+            case 1:
+                oil();
+                break;
+            case 2:
+                sugar();
+                break;
+            case 3:
+                soap();
+                break;
+            case 4:
+                maggie();
+                break;
+            default:
+            System.out.println("invalid choice: ");
+        }
+    }
+    
+    void oil()
+    {
+        int price=200;
+        System.out.print("enter quantity: ");
+        int qnt=s.nextInt();
+        int amount=qnt*price;
+        O=amount;
+        final_amt= O + Su + S + M;
+        System.out.println("amount of oil -> " +amount);
+        System.out.println("final amount " +final_amt);
+        continueShop();
+        //bill();
+    }
+    
+    void sugar()
+    {
+       int price=40;
+        System.out.print("enter quantity: ");
+        int qnt=s.nextInt();
+        int amount=qnt*price;
+        Su=amount;
+        final_amt=O+Su+S+M;
+        System.out.println("amount of sugar -> " +amount);
+        continueShop();
+        //bill();
+    }
+    void soap()
+    {
+       int price=100;
+        System.out.print("enter quantity: ");
+        int qnt=s.nextInt();
+        int amount=qnt*price;
+        S=amount;
+        final_amt= O + Su + S + M;
+        System.out.println("amount of soap -> " +amount);
+        continueShop();
+        //bill();
+    }
+    void maggie()
+    {
+        int price=50;
+        System.out.print("enter quantity: ");
+        int qnt=s.nextInt();
+        int amount=qnt*price;
+        M=amount;
+        final_amt=O+Su+S+M;
+        System.out.println("amount of maggie -> " +amount);
+        //System.out.println("final amount " +final_amt);
+        continueShop();
+        //bill();
+    }
+    
+    void continueShop()
+    {
+        System.out.println("do you want to continue?");
+        System.out.println("1.Yes\t2.No");
+        int ch=s.nextInt();
+        if(ch==1)
+        {
+           userBasket();
+        }
+        else
+        {
+            //System.out.println("Thank you");
+            bill();
+        }
+        
+    }
+    void bill()
+    {
+        int total=final_amt;
+        System.out.println("final bill is ->" +total);
+    }
+}
+public class MyClass 
+{
+    public static void main(String args[]) 
+    {
+        
+        Demo d=new Demo();
+        d.itemList();
+        d.userBasket();
+        d.continueShop();
+        //d.bill();
+    }
+}

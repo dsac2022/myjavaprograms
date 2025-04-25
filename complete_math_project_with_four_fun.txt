@@ -1,0 +1,103 @@
+import java.util.*;
+
+class Test
+{
+    Scanner s = new Scanner(System.in);
+    int a[] = new int[5];
+    
+    int[] takeArr()
+    {
+        System.out.println("------------------------------------");
+        System.out.println("Enter array elements..");
+        System.out.println("-------------------------------------");
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=s.nextInt();
+        }
+        return a;
+        
+    }
+    void option()
+    {
+     System.out.println("------------------------------------");
+     System.out.println("Enter your choice..\n1.See biggest array number\n2.sum of array\n3.Prime Number\n");
+     System.out.println("------------------------------------");
+     int ch=s.nextInt();
+     switch(ch)
+     {
+         case 1:
+             System.out.println("you havce selected big number of array...");
+             bigNumber();
+             break;
+         case 2:
+             System.out.println("you have selected sum of array... ");
+             sumOfArray();
+             break;
+        case 3:
+            System.out.println("you have selected a prime number...");
+            primeNumber();
+            break;
+        default:
+        System.out.println("invalid choice");
+     }
+    }
+    
+    
+    void bigNumber()
+    {
+        int big=a[0];
+        int temp=0;
+       for(int i=0;i<a.length;i++)
+       {
+           for(int j=i+1;j<a.length;j++)
+           {
+               if(big<a[j])
+               {
+                 temp=big;
+                 big=a[j];
+                 a[j]=temp;
+               }
+           }
+       }
+       System.out.println("big number is.." +big);
+    }
+    void sumOfArray()
+    {
+        int sum=0;
+        for(int i=0;i<a.length;i++)
+        {
+            sum = sum+a[i];
+        }
+        System.out.println("sum of arrya is: " +sum);
+    }
+    
+    void primeNumber()
+    {
+        int rem=0;
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=1;j<=a[i];j++)
+            {
+                if(a[i]%j==0)
+                {
+                    rem++;
+                }
+            }
+            if(rem==2)
+            System.out.println(a[i]+" is a prime number");
+            else
+            System.out.println(a[i]+" is not a prime number");
+            rem=0;
+        }
+        
+    }
+}
+public class MyClass
+{
+    public static void main(String args[]) 
+    {
+        Test t = new Test();
+         t.takeArr();
+         t.option();
+    }
+}

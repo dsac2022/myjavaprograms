@@ -1,0 +1,74 @@
+import java.util.*;
+class Compute
+{
+    Scanner s=new Scanner(System.in);
+    {
+        System.out.println("Enter Your Choice...\n1.Addition\t2.Subtraction\t3.Multiplication\t4.Divison");
+    }
+    int choice=s.nextInt();
+    void calculate()
+    {
+        switch(choice)
+      {
+        case 1:
+            Addition();
+            break;
+        case 2:
+            Subtraction();
+            break;
+        case 3:
+            Multiplication();
+            break;
+        case 4:
+            Divison();
+            break;
+        default:
+        System.out.println("invalid choice");
+      }
+    }
+      void Addition()
+        {
+            System.out.println("Enter first numbers :");
+            int n1=s.nextInt();
+            System.out.println("Enter second numbers :");
+            int n2=s.nextInt();
+            int c=n1+n2;
+            System.out.println("sum of "+n1+ " and "+n2+" is:"+c);
+        }
+       void Subtraction()
+      {
+        System.out.println("Enter first numbers :");
+        int n1=s.nextInt();
+        System.out.println("Enter second numbers :");
+        int n2=s.nextInt();
+        int c=n1-n2;
+        System.out.println("Subtraction of "+n1+ " and "+n2+" is:"+c);
+      }
+      void Multiplication()
+       {
+        System.out.println("Enter first numbers :");
+        int n1=s.nextInt();
+        System.out.println("Enter second numbers :");
+        int n2=s.nextInt();
+        int c=n1*n2;
+        System.out.println("Multiplication of "+n1+ " and "+n2+" is:"+c);
+      }
+      void Divison()
+      {
+        System.out.println("Enter first numbers :");
+        int n1=s.nextInt();
+        System.out.println("Enter second numbers :");
+        int n2=s.nextInt();
+        int c=n1/n2;
+        System.out.println("division of "+n1+ " and "+n2+" is:"+c);
+      }
+}
+public class MyClass 
+{
+    
+    public static void main(String args[]) 
+    {
+        Compute c=new Compute();
+        c.calculate();
+    }
+}
